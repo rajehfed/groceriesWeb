@@ -1,0 +1,79 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build directories
+dist/
+dist-ssr/
+.out/
+.build/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js specific
+.next/
+out/
+
+# Gatsby specific
+.cache/
+public/
+
+# Parcel-bundler specific
+.cache/
+dist/
+
+# Svelte specific
+__sapper__/
+public/
+
+# Tailwind CSS build cache
+.postcssrc
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.Trash-*
+
+# Ignore the build directory from being tracked
+build/
+*.out
+
+# Ignore files related to testing
+coverage/
+junit.xml
+c

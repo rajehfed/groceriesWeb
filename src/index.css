@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.cdnfonts.com/css/mona-sans');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.filter{
+	@apply flex items-center justify-center gap-2 py-3 px-4 text-black/50 rounded-full font-semibold font-dm-sans;
+}
+
+.active{
+	@apply text-black/70;
+}
