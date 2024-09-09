@@ -79,7 +79,7 @@ export default function BestService() {
           initial={{ rotate: -20 }}
           animate={{ rotate: 20 }}
           transition={{
-            duration: 4,
+            duration: 2,
             repeat: Infinity,
             repeatType: "reverse",
             ease: "easeInOut",
@@ -92,7 +92,7 @@ export default function BestService() {
           initial={{ rotate: -20 }}
           animate={{ rotate: 20 }}
           transition={{
-            duration: 4,
+            duration: 2,
             repeat: Infinity,
             repeatType: "reverse",
             ease: "easeInOut",
@@ -105,7 +105,7 @@ export default function BestService() {
           initial={{ rotate: -20 }}
           animate={{ rotate: 20 }}
           transition={{
-            duration: 4,
+            duration: 2,
             repeat: Infinity,
             repeatType: "reverse",
             ease: "easeInOut",
