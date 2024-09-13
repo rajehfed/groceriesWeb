@@ -1,9 +1,3 @@
-/**
- * eslint-disable @typescript-eslint/no-unused-vars
- *
- * @format
- */
-
 /** @format */
 
 import React, { useEffect, useRef, useState } from "react";
@@ -45,82 +39,82 @@ export const CardsFruit: React.FC<CardProps> = ({
   return (
     <AnimatePresence>
       <motion.div
-        className="flex flex-col items-center justify-center space-y-4 cursor-grab w-64"
+        className="flex flex-col items-center justify-center space-y-4 cursor-grab w-full max-w-xs mx-auto"
         layout
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <div className="w-full h-[50%] cursor-grab">
+        <div className="w-full h-48 sm:h-64 md:h-72 lg:h-80 cursor-grab">
           <img
             src={image}
             alt={name}
-            className="object-contain w-60 h-[100%]"
+            className="object-contain w-full h-full"
           />
         </div>
-        <div className="w-full">
-          <div className="grid grid-cols-2 place-content-center gap-x-32 w-full">
-            <div className="space-y-2">
-              <h1 className="font-bold font-dm-sans text-2xl text-nowrap">
+        <div className="w-full p-4">
+          <div className="flex justify-between items-center w-full">
+            <div className="space-y-1">
+              <h1 className="font-bold font-dm-sans text-lg sm:text-xl md:text-2xl">
                 {name}
               </h1>
-              <p className="font-medium font-dm-sans text-black/60">
+              <p className="font-medium font-dm-sans text-xs sm:text-sm md:text-base text-black/60">
                 {category}
               </p>
             </div>
-            <h1 className="font-bold font-dm-sans text-2xl">${price}/lb </h1>
+            <h1 className="font-bold font-dm-sans text-lg sm:text-xl md:text-2xl">
+              ${price}/lb
+            </h1>
           </div>
-          <div className="grid grid-cols-2 w-full mt-4">
-            <button className="flex items-center justify-between px-4 py-2 border-2 border-green-s rounded-full text-sm font-semibold font-dm-sans text-[#004b24] w-36">
-              <LuShoppingBag color="#004b24" className="w-5 h-5" />
+          <div className="flex flex-col sm:flex-row justify-between items-center mt-4 gap-2">
+            <button className="flex items-center justify-center py-2 px-4 border-2 border-green-s rounded-full text-xs sm:text-sm font-semibold font-dm-sans text-[#004b24] w-full sm:w-auto">
+              <LuShoppingBag color="#004b24" className="w-4 h-4 mr-2" />
               Add To Cart
             </button>
-            <div className="w-full flex justify-end items-center">
-              <button
-                className={`p-2 border-2 rounded-full place-items-center ${
-                  isClicked ? " border-[#e5122a]" : " border-green-s"
-                }`}
-              >
-                {isClicked ? (
-                  <FaHeart
-                    color="#e5122a"
-                    className="w-5 h-5"
-                    onClick={handelClick}
-                  />
-                ) : (
-                  <FaRegHeart
-                    onClick={handelClick}
-                    color={"#004b24"}
-                    className="w-5 h-5"
-                  />
-                )}
-              </button>
-            </div>
+            <button
+              className={`flex items-center justify-center p-2 border-2 rounded-full w-full sm:w-auto ${
+                isClicked ? "border-[#e5122a]" : "border-green-s"
+              }`}
+              onClick={handelClick}
+            >
+              {isClicked ? (
+                <FaHeart color="#e5122a" className="size-5 mr-2 md:mr-0" />
+              ) : (
+                <FaRegHeart color="#004b24" className="size-5 mr-2 md:mr-0" />
+              )}
+              <span className="text-xs md:text-[0px] sm:text-sm font-dm-sans text-green-primary font-semibold">
+                Add to favorite
+              </span>
+            </button>
           </div>
         </div>
       </motion.div>
     </AnimatePresence>
   );
 };
+
 export default function Cards() {
   const [width, setWidth] = useState<number>(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (carouselRef.current) {
-      const scrollWidth = carouselRef.current.scrollWidth;
-      const offsetWidth = carouselRef.current.offsetWidth;
-      setWidth(
-        carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
-      );
-    }
+    const updateWidth = () => {
+      if (carouselRef.current) {
+        setWidth(
+          carouselRef.current.scrollWidth - carouselRef.current.offsetWidth
+        );
+      }
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
-      Math.min(prevIndex + 1, cardInfo.length - 3)
+      Math.min(prevIndex + 1, cardInfo.length - 1)
     );
   };
 
@@ -129,27 +123,29 @@ export default function Cards() {
   };
 
   const isAtStart: boolean = currentIndex === 0;
-  const isAtEnd: boolean = currentIndex >= cardInfo.length - 3;
+  const isAtEnd: boolean = currentIndex === cardInfo.length - 1;
 
   return (
-    <div className="flex flex-col items-center justify-center w-full overflow-hidden mt-20">
-      <div className="flex justify-between items-center w-full px-16">
-        <div className="flex justify-center items-center gap-2">
-          <h1 className="uppercase font-mona-sans font-bold text-2xl">
+    <div className="flex flex-col items-center justify-center w-full overflow-hidden mt-8 sm:mt-12 md:mt-16 lg:mt-20">
+      <div className="flex justify-between items-center w-full px-4 sm:px-8 md:px-16">
+        <div className="flex flex-col sm:flex-row items-center gap-2">
+          <h1 className="uppercase font-mona-sans font-bold text-xl sm:text-2xl md:text-3xl">
             Fresh Deals
           </h1>
           <a
-            className="text-[12px] font-dm-sans font-semibold text-[#9df01a] flex items-center justify-start gap-1"
+            className="text-xs sm:text-sm font-dm-sans font-semibold text-[#9df01a] flex items-center justify-start gap-1"
             href="#"
           >
             View More
             <FaArrowRight />
           </a>
         </div>
-        <div className="hidden md:flex items-center justify-center gap-1 ">
+        <div className="flex items-center justify-center gap-1">
           <button
             className={`p-2 border-2 border-green-s rounded-full ${
-              isAtStart && " text-gray-300 cursor-not-allowed border-green-s/60"
+              isAtStart
+                ? "text-gray-300 cursor-not-allowed border-green-s/60"
+                : ""
             }`}
             disabled={isAtStart}
             onClick={prevSlide}
@@ -158,7 +154,9 @@ export default function Cards() {
           </button>
           <button
             className={`p-2 border-2 border-green-s rounded-full ${
-              isAtEnd && " text-gray-300 cursor-not-allowed border-green-s/60"
+              isAtEnd
+                ? "text-gray-300 cursor-not-allowed border-green-s/60"
+                : ""
             }`}
             disabled={isAtEnd}
             onClick={nextSlide}
@@ -167,19 +165,22 @@ export default function Cards() {
           </button>
         </div>
       </div>
-      <div className="w-full flex justify-center mt-16">
-        <motion.div className="w-[90%] overflow-hidden" ref={carouselRef}>
+      <div className="w-full mt-8 sm:mt-12 md:mt-16">
+        <motion.div className="w-full overflow-hidden" ref={carouselRef}>
           <motion.div
             className="flex"
             drag="x"
-            dragConstraints={{ right: 10, left: -width }}
+            dragConstraints={{ right: 0, left: -width }}
             animate={{
-              x: (-currentIndex * (carouselRef.current?.offsetWidth || 0)) / 3,
+              x: -currentIndex * (carouselRef.current?.offsetWidth || 0),
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             {cardInfo.map((item, index) => (
-              <div key={index} className="min-w-[33.33%] px-2">
+              <div
+                key={index}
+                className="min-w-full sm:min-w-[50%] md:min-w-[33.33%] lg:min-w-[25%] p-2"
+              >
                 <CardsFruit {...item} />
               </div>
             ))}

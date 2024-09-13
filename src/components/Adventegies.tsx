@@ -13,18 +13,18 @@ export default function Adventegies() {
     <ParallaxProvider>
       <>
         <motion.div
-          className="flex flex-col items-start md:flex-row md:justify-evenly gap-8 md:items-center md:w-40 lg:w-[73rem] bg-white rounded-2xl py-3 md:px-0 px-7 relative -bottom-10 shadow-xl md:bottom-10 md:shadow-md"
+          className="flex flex-col items-start md:items-start md:flex-row md:justify-evenly gap-4 md:gap-8 w-[19rem] md:w-40 lg:w-[73rem] bg-white rounded-2xl py-3 md:px-0 px-7 relative -bottom-10 shadow-xl md:bottom-10 md:shadow-md"
           initial={{
             y: 0,
           }}
           animate={{
-            y: [0, -10, 0]
+            y: [0, -10, 0],
           }}
           transition={{
             duration: 2,
             repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'easeInOut'
+            repeatType: "reverse",
+            ease: "easeInOut",
           }}
         >
           <Advnts desc="Free shipping an all orders." title="FREE DELIVERY">
@@ -61,7 +61,7 @@ const Advnts: React.FC<AdvntsProps> = ({ children, title, desc }) => {
           </div>
         </div>
         <div>
-          <h1 className="font-mona-sans text-1 text-sm md:text-xl font-semibold">
+          <h1 className="font-mona-sans text-1 text-md md:text-xl font-semibold text-nowrap">
             {title}
           </h1>
           <p className="font-dm-sans font-semibold text-black/60 text-[10px] md:text-xs">

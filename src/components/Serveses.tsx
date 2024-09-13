@@ -18,30 +18,30 @@ export default function Serveses() {
   ];
 
   return (
-    <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="relative">
+    <div className="mt-20 grid grid-cols-1 place-content-center md:grid-cols-2 gap-4 mb-32">
+      <div className="relative top-[27rem] md:top-[0]">
         <img
           src={GoodLock}
           alt="goodLook"
-          className="h-[40rem] md:h-[30rem] object-cover absolute top-28"
+          className="h-[19rem] md:h-[30rem] left-3 object-cover absolute top-28"
         />
         <img
           src={star}
           alt="star"
-          className="w-11 absolute left-16 top-[23rem] md:top-[15rem]"
+          className="md:w-11 w-8 absolute left-16 top-[7rem] md:top-[15rem]"
         />
         <img
           src={star}
           alt="star"
-          className="w-20 absolute left-64 top-28 md:top-[1rem] -z-10"
+          className="md:w-20 w-14 absolute md:left-64 left-72 top-44 md:top-[1rem] z-10"
         />
         <img
           src={star}
           alt="star"
-          className="w-11 absolute right-16 bottom-60 md:bottom-[10rem]"
+          className="w-11 absolute md:right-16 right-72 bottom-[-29rem] md:bottom-[10rem]"
         />
         <motion.div
-          className="p-4 bg-white/50 border-2 border-white/40 drop-shadow-sm backdrop-blur absolute bottom-[27rem] left-[28rem] md:bottom-[15rem] md:left-[28rem] w-25 h-25 rounded-2xl inline-flex justify-center items-center"
+          className="p-4 bg-white/50 border-2 border-white/40 drop-shadow-sm backdrop-blur absolute top-56 left-[1rem] md:bottom-[15rem] md:left-[28rem] size-20 md:size-24 rounded-2xl inline-flex justify-center items-center"
           initial={{ y: 0, x: 0 }}
           animate={{ y: [0, -10, 0], x: [0, -7, 0] }}
           transition={{
@@ -54,7 +54,7 @@ export default function Serveses() {
           <img src={redBerries} alt="Berries" className="w-16" />
         </motion.div>
         <motion.div
-          className="p-4 bg-white/50 border-2 border-white/40 drop-shadow-sm backdrop-blur absolute bottom-72 -left-7 md:bottom-[3rem] md:left-[2rem] w-25 h-25 rounded-2xl inline-flex justify-center items-center"
+          className="p-4 bg-white/50 border-2 border-white/40 drop-shadow-sm backdrop-blur absolute -bottom-[29rem] left-64 md:bottom-[3rem] md:left-[2rem] size-20 md:size-24 rounded-2xl inline-flex justify-center items-center"
           initial={{ y: 0, x: 0 }}
           animate={{ y: [0, -10, 0], x: [0, -7, 0] }}
           transition={{
@@ -67,8 +67,8 @@ export default function Serveses() {
           <img src={redApple} alt="apple" className="w-16" />
         </motion.div>
       </div>
-      <div className="flex flex-col justify-center items-start gap-3 relative bottom-20 md:bottom-4">
-        <h1 className="font-mona-sans text-3xl md:text-4xl uppercase font-semibold">
+      <div className="flex flex-col justify-center items-center md:items-start gap-3 relative bottom-20 md:bottom-4 md:text-left text-center">
+        <h1 className="font-mona-sans text-3xl md:text-4xl uppercase font-semibold text-center">
           Best quality <br />
           healthy & fresh <br />
           grocery
@@ -78,7 +78,7 @@ export default function Serveses() {
           <br />
           of our products.
         </p>
-        <div className="flex flex-col justify-center items-start gap-4 mt-3">
+        <div className="flex flex-col justify-center items-start gap-4 mt-3 px-4">
           {servises.map((text, index) => (
             <div key={index} className="flex justify-center items-center gap-4">
               <span className="p-2 bg-green-p/10 rounded-full hover:bg-green-p/20 duration-700 ease-in-out">

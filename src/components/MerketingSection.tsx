@@ -12,12 +12,12 @@ export default function MerketingSection() {
   return (
     <main className="flex flex-col justify-center items-center mt-10 md:mt-0 md:grid md:grid-cols-2 place-items-center md:justify-around h-screen w-full">
       <div className="space-y-4">
-        <h1 className="uppercase text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-wider font-mona-sans text-black">
+        <h1 className="uppercase text-2xl md:text-left text-center sm:text-4xl lg:text-5xl font-semibold tracking-wider font-mona-sans text-black">
           DOWNLOAD OUR <br />
           ONLINE GROCERY <br />
           MOBILE APP
         </h1>
-        <div className="flex justify-start gap-4 md:gap-8 items-center">
+        <div className="flex md:justify-start justify-center gap-4 md:gap-8 items-center">
           <div>
             <h1 className="font-mona-sans font-semibold text-sm md:text-lg">
               05 MILLION+
@@ -53,7 +53,7 @@ export default function MerketingSection() {
           repeatType: "reverse",
           ease: "easeInOut",
         }}
-        className="relative md:bottom-0 -bottom-32 right-10"
+        className="relative md:bottom-0 -bottom-24 right-10"
       >
         {/* Added mt-10 for margin */}
         <Cards

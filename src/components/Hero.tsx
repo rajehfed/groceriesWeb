@@ -35,7 +35,7 @@ const GlassCard: React.FC<GlassCardProps> = ({
 export default function Hero() {
   return (
     <ParallaxProvider>
-      <section className="min-h-[120vh] md:h-[50vh] lg:min-h-screen overflow-hidden flex flex-col lg:flex-row justify-between items-center gap-8 px-4 sm:px-6 lg:px-10 py-12 bg-gradient-to-tr from-lime-200 via-lime-300 via-30% to-lime-200 w-full">
+      <section className="h-[100vh] md:h-[70vh] lg:min-h-screen overflow-hidden flex flex-col lg:flex-row justify-between items-center gap-8 px-4 sm:px-6 lg:px-10 py-12 bg-gradient-to-tr from-lime-200 via-lime-300 via-30% to-lime-200 w-full">
         <Parallax translateY={["-20px", "20px"]} className="w-full lg:w-1/2">
           <div className="font-mona-sans space-y-5 text-green-primary">
             <div className="space-y-3">
@@ -60,20 +60,21 @@ export default function Hero() {
           </div>
         </Parallax>
 
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative md:left-24">
           <Parallax translateY={["-30px", "30px"]} className="w-full h-full">
             <img
               src={fruitBasket}
               alt="basket"
-              className="w-full max-w-md lg:max-w-xl xl:max-w-2xl object-contain z-[0] absolute bottom-[-6rem] md:bottom-80 lg:sticky"
+              className="w-full max-w-md lg:max-w-xl xl:max-w-2xl object-contain z-[0] absolute bottom-[-10rem] md:bottom-80 md:left-0 lg:sticky"
             />
           </Parallax>
 
           <Parallax
+            easing={"easeInBack"}
             translateY={["-30px", "30px"]}
-            className="absolute left-[-0.5rem] -top-[4rem] md:left-[5rem] md:top-[-28rem] lg:left-[-5rem] lg:top-[25rem]"
+            className="absolute left-[-3.5rem] -top-[4rem] md:left-[5rem] md:top-[-28rem] lg:left-[-5rem] lg:top-[25rem]"
           >
-            <GlassCard className="flex-col">
+            <GlassCard className="flex-col relative left-12 md:left-10">
               <h1 className="font-mona-sans font-semibold text-green-primary uppercase text-[0.5rem] md:text-[1rem]">
                 Happy customers
               </h1>
@@ -117,9 +118,9 @@ export default function Hero() {
           <Parallax
             easing={"easeInBack"}
             translateY={["10px", "-10px"]}
-            className="absolute left-[10rem] top-[-12rem] sm:left-[7rem] sm:top-[-12rem] md:left-[55rem] md:top-[-45rem] lg:left-[19rem] lg:top-[5rem]"
+            className="absolute left-[-3rem] bottom-[5rem] md:left-[55rem] md:top-[-45rem] lg:left-[19rem] lg:top-[5rem]"
           >
-            <GlassCard className="flex items-center justify-center gap-6 flex-row">
+            <GlassCard className="flex items-center justify-center gap-6 flex-row relative -right-48 md:top-0 md:right-32">
               <div className="inline-flex justify-center items-center">
                 <MdOutlineAccessTime
                   color="#004b24"

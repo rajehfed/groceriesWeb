@@ -98,10 +98,10 @@ export default function Categories() {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center w-full overflow-hidden">
-      <div className="flex justify-between items-center w-full px-16">
-        <div className="flex justify-center items-center gap-2">
-          <h1 className="uppercase font-mona-sans font-bold text-2xl">
+    <div className="flex flex-col items-center justify-center w-full mt-16">
+      <div className="flex justify-center items-center w-full px-4 md:px-16">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-2">
+          <h1 className="uppercase font-mona-sans font-bold text-xl md:text-2xl">
             Browse by Category
           </h1>
           <a
@@ -133,9 +133,9 @@ export default function Categories() {
           </button>
         </div>
       </div>
-      <div className="flex justify-center overflow-hidden" ref={sliderRef}>
+      <div className="flex justify-center overflow-hidden mt-10" ref={sliderRef}>
         <motion.div
-          className="flex justify-center items-center w-screen gap-2 p-3 overflow-hidden"
+          className="flex justify-center items-center w-screen gap-2 p-3"
           initial={false}
           animate={{ x: `-${startIndex * slideWidthRef.current}px` }}
           transition={{ type: "spring", stiffness: 300, damping: 50 }}
@@ -143,10 +143,10 @@ export default function Categories() {
           {fruitNames.map((item, index) => (
             <a
               href="#"
-              className="flex flex-col justify-center items-center hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] bg-white rounded-2xl pb-1 duration-500 ease-in-out"
+              className="flex flex-col justify-center items-center bg-white rounded-2xl pb-1 duration-500 ease-in-out"
               key={index}
             >
-              <div className="w-32 h-20 flex items-center justify-center">
+              <div className="w-28 h-16 md:w-32 md:h-20 flex items-center justify-center">
                 <img src={item.image} alt={item.type} className="w-14" />
               </div>
               <h1 className="font-mona-sans font-semibold ">{item.type}</h1>

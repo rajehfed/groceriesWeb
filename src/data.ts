@@ -38,6 +38,12 @@ import CreamMilkImage from "./assets/CreamMilk.png";
 import MilkImage from "./assets/milk.png";
 import ButterImage from "./assets/butter.png";
 
+import Dan from "./assets/persone1.jpg";
+import mohamed from "./assets/persone2.jpg";
+import Caroll from "./assets/persone3.jpg";
+import Aya from './assets/persone4.jpg';
+import carl from './assets/persone5.jpg';
+
 export const categories = [
   {
     category: "Fruits",
@@ -252,5 +258,43 @@ export const categories = [
   {
     category: "Deals & Sales",
     items: [],
+  },
+];
+
+export const sliderData = [
+  {
+    img: Dan,
+    name: "Dan Walker",
+    job: "Statisfied Customer",
+    rate: 5,
+    desc: "I've been using this grocery delivery app for several months now, and I'm continually impressed with the service it provides. As a busy professional, I value convenience, and this app delivers that in spades.",
+  },
+  {
+    img: mohamed,
+    name: "Mohamed Baraa",
+    job: "Statisfied Customer",
+    rate: 5,
+    desc: "I've been using this grocery delivery app for several months now, and I'm continually impressed with the service it provides. As a busy professional, I value convenience, and this app delivers that in spades.",
+  },
+  {
+    img: Caroll,
+    name: "Dayana Caroll",
+    job: "Statisfied Customer",
+    rate: 5,
+    desc: "I've been using this grocery delivery app for several months now, and I'm continually impressed with the service it provides. As a busy professional, I value convenience, and this app delivers that in spades.",
+  },
+  {
+    img: Aya,
+    name: "Aya Youness",
+    job: "Statisfied Customer",
+    rate: 5,
+    desc: "I've been using this grocery delivery app for several months now, and I'm continually impressed with the service it provides. As a busy professional, I value convenience, and this app delivers that in spades.",
+  },
+  {
+    img: carl,
+    name: "Daniel Carl",
+    job: "Statisfied Customer",
+    rate: 5,
+    desc: "I've been using this grocery delivery app for several months now, and I'm continually impressed with the service it provides. As a busy professional, I value convenience, and this app delivers that in spades.",
   },
 ];
